@@ -1,0 +1,53 @@
+name: Select lowest-ping configs
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [configs.txt]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: select-lowest
+  cancel-in-progress: false
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Xray
+        run: |
+          curl -fsSL -o "$RUNNER_TEMP/xray.zip" \
+            https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip
+          unzip -q "$RUNNER_TEMP/xray.zip" -d "$RUNNER_TEMP/xray"
+          chmod +x "$RUNNER_TEMP/xray/xray"
+          echo "$RUNNER_TEMP/xray" >> "$GITHUB_PATH"
+
+      - name: Test configs
+        run: python select_lowest.py
+
+      - name: Commit lowest.txt to main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add lowest.txt
+          if git diff --staged --quiet; then
+            echo "No changes"
+            exit 0
+          fi
+          git commit -m "Update lowest.txt"
+          git pull --rebase origin main
+          git push origin HEAD:main
