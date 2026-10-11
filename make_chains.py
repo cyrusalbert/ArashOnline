@@ -2,7 +2,7 @@
 """Build chained configs (entry -> exit) and publish them as a JSON subscription.
 
   * exits   : the fastest configs from lowest.txt
-  * entries : random configs from cyrus-enhanced.txt (file path or URL)
+  * entries : random configs from entryconfs.txt (file path or URL)
 Each exit is paired with one random entry. Every chain is tested end to end
 (HTTP GET latency, exit country, download speed); a dead entry is replaced by
 another random one. The result is written to chains.json, a JSON array of
@@ -31,9 +31,9 @@ import select_lowest as sl
 
 # ----------------------------- settings ------------------------------------
 EXIT_FILE = Path("lowest.txt")
-ENTRY_SOURCE = os.environ.get("ENTRY_SOURCE", "cyrus-enhanced.txt")  # path or URL
+ENTRY_SOURCE = os.environ.get("ENTRY_SOURCE", "entryconfs.txt")  # path or URL
 OUTPUT_FILE = Path("chains.json")
-N_CHAINS = 10
+N_CHAINS = 30
 ENTRY_TRIES = 6          # random entries tried per exit before giving up on it
 CHAIN_TIMEOUT = 12.0     # per-request timeout; chains have two hops
 SPEED_URL = "https://speed.cloudflare.com/__down?bytes=25000000"
