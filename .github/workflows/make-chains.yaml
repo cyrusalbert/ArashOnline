@@ -37,7 +37,7 @@ jobs:
 
       - name: Build chains
         env:
-          ENTRY_SOURCE: cyrus-enhanced.txt
+          ENTRY_SOURCE: entryconfigs.txt
         run: python make_chains.py
 
       - name: Commit chains.json to main
