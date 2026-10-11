@@ -1,0 +1,54 @@
+name: Build chain subscription
+
+on:
+  workflow_run:
+    workflows: ["Select lowest-ping configs"]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: make-chains
+  cancel-in-progress: false
+
+jobs:
+  chains:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Install Xray
+        run: |
+          curl -fsSL -o "$RUNNER_TEMP/xray.zip" \
+            https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip
+          unzip -q "$RUNNER_TEMP/xray.zip" -d "$RUNNER_TEMP/xray"
+          chmod +x "$RUNNER_TEMP/xray/xray"
+          echo "$RUNNER_TEMP/xray" >> "$GITHUB_PATH"
+
+      - name: Build chains
+        env:
+          ENTRY_SOURCE: cyrus-enhanced.txt
+        run: python make_chains.py
+
+      - name: Commit chains.json to main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add chains.json
+          if git diff --staged --quiet; then
+            echo "No changes"
+            exit 0
+          fi
+          git commit -m "Update chains.json"
+          git pull --rebase origin main
+          git push origin HEAD:main
