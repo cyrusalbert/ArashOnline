@@ -1,6 +1,6 @@
 [
   {
-    "remarks": "🇺🇸 | 45.86.51.18:19999 119ms n/a",
+    "remarks": "🇺🇸 | 45.86.51.18:19999 126ms n/a",
     "log": {
       "loglevel": "warning"
     },
@@ -96,7 +96,7 @@
     }
   },
   {
-    "remarks": "🇺🇸 | 185.230.230.18:19999 519ms 147.4Mbps",
+    "remarks": "🇺🇸 | 185.230.230.18:19999 517ms 145.6Mbps",
     "log": {
       "loglevel": "warning"
     },
