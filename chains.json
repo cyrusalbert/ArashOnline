@@ -1,6 +1,6 @@
 [
   {
-    "remarks": "🇺🇸 | 95.215.201.18:19999 168ms 167.9Mbps",
+    "remarks": "🇺🇸 | 37.19.198.244:443 55ms 166.4Mbps",
     "log": {
       "loglevel": "warning"
     },
@@ -37,126 +37,6 @@
       }
     ],
     "outbounds": [
-      {
-        "protocol": "shadowsocks",
-        "settings": {
-          "servers": [
-            {
-              "address": "95.215.201.18",
-              "port": 19999,
-              "method": "aes-256-gcm",
-              "password": "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
-            }
-          ]
-        },
-        "tag": "proxy",
-        "streamSettings": {
-          "sockopt": {
-            "dialerProxy": "entry"
-          }
-        }
-      },
-      {
-        "protocol": "vmess",
-        "settings": {
-          "vnext": [
-            {
-              "address": "67.220.85.46",
-              "port": 18000,
-              "users": [
-                {
-                  "id": "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe",
-                  "alterId": 0,
-                  "security": "aes-128-gcm"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "security": "none"
-        },
-        "tag": "entry"
-      },
-      {
-        "tag": "direct",
-        "protocol": "freedom",
-        "settings": {}
-      },
-      {
-        "tag": "block",
-        "protocol": "blackhole",
-        "settings": {}
-      }
-    ],
-    "routing": {
-      "domainStrategy": "AsIs",
-      "rules": []
-    }
-  },
-  {
-    "remarks": "🇺🇸 | 66.163.112.13:443 259ms 9.1Mbps",
-    "log": {
-      "loglevel": "warning"
-    },
-    "dns": {
-      "servers": [
-        "1.1.1.1",
-        "8.8.8.8"
-      ]
-    },
-    "inbounds": [
-      {
-        "tag": "socks",
-        "listen": "127.0.0.1",
-        "port": 10808,
-        "protocol": "socks",
-        "settings": {
-          "auth": "noauth",
-          "udp": true
-        },
-        "sniffing": {
-          "enabled": true,
-          "destOverride": [
-            "http",
-            "tls"
-          ]
-        }
-      },
-      {
-        "tag": "http",
-        "listen": "127.0.0.1",
-        "port": 10809,
-        "protocol": "http",
-        "settings": {}
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "trojan",
-        "settings": {
-          "servers": [
-            {
-              "address": "66.163.112.13",
-              "port": 443,
-              "password": "0ab6c98dae3b48e8b9c4a776b6c9c19a"
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "security": "tls",
-          "tlsSettings": {
-            "allowInsecure": false,
-            "serverName": "blog.unlockyourfuturefindyourperfectcareer.com"
-          },
-          "sockopt": {
-            "dialerProxy": "entry"
-          }
-        },
-        "tag": "proxy"
-      },
       {
         "protocol": "shadowsocks",
         "settings": {
@@ -169,194 +49,12 @@
             }
           ]
         },
-        "tag": "entry"
-      },
-      {
-        "tag": "direct",
-        "protocol": "freedom",
-        "settings": {}
-      },
-      {
-        "tag": "block",
-        "protocol": "blackhole",
-        "settings": {}
-      }
-    ],
-    "routing": {
-      "domainStrategy": "AsIs",
-      "rules": []
-    }
-  },
-  {
-    "remarks": "🇺🇸 | 85.155.179.206:443 259ms n/a",
-    "log": {
-      "loglevel": "warning"
-    },
-    "dns": {
-      "servers": [
-        "1.1.1.1",
-        "8.8.8.8"
-      ]
-    },
-    "inbounds": [
-      {
-        "tag": "socks",
-        "listen": "127.0.0.1",
-        "port": 10808,
-        "protocol": "socks",
-        "settings": {
-          "auth": "noauth",
-          "udp": true
-        },
-        "sniffing": {
-          "enabled": true,
-          "destOverride": [
-            "http",
-            "tls"
-          ]
-        }
-      },
-      {
-        "tag": "http",
-        "listen": "127.0.0.1",
-        "port": 10809,
-        "protocol": "http",
-        "settings": {}
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "vless",
-        "settings": {
-          "vnext": [
-            {
-              "address": "85.155.179.206",
-              "port": 443,
-              "users": [
-                {
-                  "id": "86a83d11-d751-4b60-aa4e-1dca5cff7028",
-                  "encryption": "none"
-                }
-              ]
-            }
-          ]
-        },
+        "tag": "proxy",
         "streamSettings": {
-          "network": "tcp",
-          "security": "tls",
-          "tlsSettings": {
-            "allowInsecure": false,
-            "serverName": "us3.shtil.io",
-            "fingerprint": "firefox",
-            "alpn": [
-              "h2",
-              "http/1.1"
-            ]
-          },
           "sockopt": {
             "dialerProxy": "entry"
           }
-        },
-        "tag": "proxy"
-      },
-      {
-        "protocol": "trojan",
-        "settings": {
-          "servers": [
-            {
-              "address": "170.101.101.112",
-              "port": 443,
-              "password": "0ab6c98dae3b48e8b9c4a776b6c9c19a"
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "security": "tls",
-          "tlsSettings": {
-            "allowInsecure": false,
-            "serverName": "resources.explorecreativejobsandenhanceyourcareerportfolio.com"
-          }
-        },
-        "tag": "entry"
-      },
-      {
-        "tag": "direct",
-        "protocol": "freedom",
-        "settings": {}
-      },
-      {
-        "tag": "block",
-        "protocol": "blackhole",
-        "settings": {}
-      }
-    ],
-    "routing": {
-      "domainStrategy": "AsIs",
-      "rules": []
-    }
-  },
-  {
-    "remarks": "🇺🇸 | 66.163.112.31:443 509ms n/a",
-    "log": {
-      "loglevel": "warning"
-    },
-    "dns": {
-      "servers": [
-        "1.1.1.1",
-        "8.8.8.8"
-      ]
-    },
-    "inbounds": [
-      {
-        "tag": "socks",
-        "listen": "127.0.0.1",
-        "port": 10808,
-        "protocol": "socks",
-        "settings": {
-          "auth": "noauth",
-          "udp": true
-        },
-        "sniffing": {
-          "enabled": true,
-          "destOverride": [
-            "http",
-            "tls"
-          ]
         }
-      },
-      {
-        "tag": "http",
-        "listen": "127.0.0.1",
-        "port": 10809,
-        "protocol": "http",
-        "settings": {}
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "trojan",
-        "settings": {
-          "servers": [
-            {
-              "address": "66.163.112.31",
-              "port": 443,
-              "password": "0ab6c98dae3b48e8b9c4a776b6c9c19a"
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "security": "tls",
-          "tlsSettings": {
-            "allowInsecure": false,
-            "serverName": "unlockyourfuturefindyourperfectcareer.com"
-          },
-          "sockopt": {
-            "dialerProxy": "entry"
-          }
-        },
-        "tag": "proxy"
       },
       {
         "protocol": "vmess",
@@ -398,7 +96,7 @@
     }
   },
   {
-    "remarks": "🇺🇸 | 107.173.237.146:8443 749ms 93.2Mbps",
+    "remarks": "🇺🇸 | 185.230.230.18:19999 91ms 676.0Mbps",
     "log": {
       "loglevel": "warning"
     },
@@ -436,16 +134,227 @@
     ],
     "outbounds": [
       {
-        "protocol": "vless",
+        "protocol": "shadowsocks",
+        "settings": {
+          "servers": [
+            {
+              "address": "185.230.230.18",
+              "port": 19999,
+              "method": "aes-256-gcm",
+              "password": "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
+            }
+          ]
+        },
+        "tag": "proxy",
+        "streamSettings": {
+          "sockopt": {
+            "dialerProxy": "entry"
+          }
+        }
+      },
+      {
+        "protocol": "trojan",
+        "settings": {
+          "servers": [
+            {
+              "address": "170.101.101.112",
+              "port": 443,
+              "password": "0ab6c98dae3b48e8b9c4a776b6c9c19a"
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "tls",
+          "tlsSettings": {
+            "allowInsecure": false,
+            "serverName": "resources.explorecreativejobsandenhanceyourcareerportfolio.com"
+          }
+        },
+        "tag": "entry"
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {}
+      },
+      {
+        "tag": "block",
+        "protocol": "blackhole",
+        "settings": {}
+      }
+    ],
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": []
+    }
+  },
+  {
+    "remarks": "🇺🇸 | 66.163.122.113:443 102ms 703.9Mbps",
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "servers": [
+        "1.1.1.1",
+        "8.8.8.8"
+      ]
+    },
+    "inbounds": [
+      {
+        "tag": "socks",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls"
+          ]
+        }
+      },
+      {
+        "tag": "http",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {}
+      }
+    ],
+    "outbounds": [
+      {
+        "protocol": "trojan",
+        "settings": {
+          "servers": [
+            {
+              "address": "66.163.122.113",
+              "port": 443,
+              "password": "0ab6c98dae3b48e8b9c4a776b6c9c19a"
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "tls",
+          "tlsSettings": {
+            "allowInsecure": false,
+            "serverName": "api.searchnationwidecareerchangehelperandguidancetoday.com"
+          },
+          "sockopt": {
+            "dialerProxy": "entry"
+          }
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "shadowsocks",
+        "settings": {
+          "servers": [
+            {
+              "address": "37.19.198.244",
+              "port": 443,
+              "method": "aes-128-gcm",
+              "password": "shadowsocks"
+            }
+          ]
+        },
+        "tag": "entry"
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {}
+      },
+      {
+        "tag": "block",
+        "protocol": "blackhole",
+        "settings": {}
+      }
+    ],
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": []
+    }
+  },
+  {
+    "remarks": "🇺🇸 | 66.163.122.7:443 221ms 130.9Mbps",
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "servers": [
+        "1.1.1.1",
+        "8.8.8.8"
+      ]
+    },
+    "inbounds": [
+      {
+        "tag": "socks",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls"
+          ]
+        }
+      },
+      {
+        "tag": "http",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {}
+      }
+    ],
+    "outbounds": [
+      {
+        "protocol": "trojan",
+        "settings": {
+          "servers": [
+            {
+              "address": "66.163.122.7",
+              "port": 443,
+              "password": "0ab6c98dae3b48e8b9c4a776b6c9c19a"
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "tls",
+          "tlsSettings": {
+            "allowInsecure": false,
+            "serverName": "www.searchnationwidecareerchangehelperandguidancetoday.com"
+          },
+          "sockopt": {
+            "dialerProxy": "entry"
+          }
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "vmess",
         "settings": {
           "vnext": [
             {
-              "address": "107.173.237.146",
-              "port": 8443,
+              "address": "67.220.85.46",
+              "port": 18000,
               "users": [
                 {
-                  "id": "1d39f715-2740-4d99-bc3b-197cc48dcee7",
-                  "encryption": "none"
+                  "id": "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe",
+                  "alterId": 0,
+                  "security": "aes-128-gcm"
                 }
               ]
             }
@@ -453,19 +362,183 @@
         },
         "streamSettings": {
           "network": "tcp",
-          "security": "reality",
-          "realitySettings": {
-            "serverName": "updates.cdn-apple.com",
-            "fingerprint": "firefox",
-            "publicKey": "D3ojIs3AUKP_tV0E4TEjh90HBVJp24Nq3qMfdxD30kc",
-            "shortId": "df8611c07d",
-            "spiderX": ""
+          "security": "none"
+        },
+        "tag": "entry"
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {}
+      },
+      {
+        "tag": "block",
+        "protocol": "blackhole",
+        "settings": {}
+      }
+    ],
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": []
+    }
+  },
+  {
+    "remarks": "🇺🇸 | 66.163.122.25:443 228ms 140.1Mbps",
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "servers": [
+        "1.1.1.1",
+        "8.8.8.8"
+      ]
+    },
+    "inbounds": [
+      {
+        "tag": "socks",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls"
+          ]
+        }
+      },
+      {
+        "tag": "http",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {}
+      }
+    ],
+    "outbounds": [
+      {
+        "protocol": "trojan",
+        "settings": {
+          "servers": [
+            {
+              "address": "66.163.122.25",
+              "port": 443,
+              "password": "0ab6c98dae3b48e8b9c4a776b6c9c19a"
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "tls",
+          "tlsSettings": {
+            "allowInsecure": false,
+            "serverName": "cdn.searchnationwidecareerchangehelperandguidancetoday.com"
           },
           "sockopt": {
             "dialerProxy": "entry"
           }
         },
         "tag": "proxy"
+      },
+      {
+        "protocol": "vmess",
+        "settings": {
+          "vnext": [
+            {
+              "address": "67.220.85.46",
+              "port": 18000,
+              "users": [
+                {
+                  "id": "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe",
+                  "alterId": 0,
+                  "security": "aes-128-gcm"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "none"
+        },
+        "tag": "entry"
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {}
+      },
+      {
+        "tag": "block",
+        "protocol": "blackhole",
+        "settings": {}
+      }
+    ],
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": []
+    }
+  },
+  {
+    "remarks": "🇺🇸 | 37.19.198.243:443 406ms 166.6Mbps",
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "servers": [
+        "1.1.1.1",
+        "8.8.8.8"
+      ]
+    },
+    "inbounds": [
+      {
+        "tag": "socks",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls"
+          ]
+        }
+      },
+      {
+        "tag": "http",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {}
+      }
+    ],
+    "outbounds": [
+      {
+        "protocol": "shadowsocks",
+        "settings": {
+          "servers": [
+            {
+              "address": "37.19.198.243",
+              "port": 443,
+              "method": "aes-128-gcm",
+              "password": "shadowsocks"
+            }
+          ]
+        },
+        "tag": "proxy",
+        "streamSettings": {
+          "sockopt": {
+            "dialerProxy": "entry"
+          }
+        }
       },
       {
         "protocol": "shadowsocks",
