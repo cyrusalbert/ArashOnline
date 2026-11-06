@@ -1,6 +1,6 @@
 [
   {
-    "remarks": "🇺🇸 | 45.86.51.18:19999 160ms 87.8Mbps",
+    "remarks": "🇺🇸 | 95.215.201.18:19999 182ms 58.7Mbps",
     "log": {
       "loglevel": "warning"
     },
@@ -42,7 +42,7 @@
         "settings": {
           "servers": [
             {
-              "address": "45.86.51.18",
+              "address": "95.215.201.18",
               "port": 19999,
               "method": "aes-256-gcm",
               "password": "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
@@ -67,7 +67,7 @@
                 {
                   "id": "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe",
                   "alterId": 0,
-                  "security": "auto"
+                  "security": "aes-128-gcm"
                 }
               ]
             }
@@ -96,7 +96,7 @@
     }
   },
   {
-    "remarks": "🇺🇸 | 170.101.101.211:443 222ms n/a",
+    "remarks": "🇺🇸 | 66.163.112.142:443 260ms n/a",
     "log": {
       "loglevel": "warning"
     },
@@ -138,7 +138,7 @@
         "settings": {
           "servers": [
             {
-              "address": "170.101.101.211",
+              "address": "66.163.112.142",
               "port": 443,
               "password": "0ab6c98dae3b48e8b9c4a776b6c9c19a"
             }
@@ -149,102 +149,8 @@
           "security": "tls",
           "tlsSettings": {
             "allowInsecure": false,
-            "serverName": "api.explorecreativejobsandenhanceyourcareerportfolio.com"
+            "serverName": "cdn.unlockyourfuturefindyourperfectcareer.com"
           },
-          "sockopt": {
-            "dialerProxy": "entry"
-          }
-        },
-        "tag": "proxy"
-      },
-      {
-        "protocol": "shadowsocks",
-        "settings": {
-          "servers": [
-            {
-              "address": "37.19.198.244",
-              "port": 443,
-              "method": "aes-128-gcm",
-              "password": "shadowsocks"
-            }
-          ]
-        },
-        "tag": "entry"
-      },
-      {
-        "tag": "direct",
-        "protocol": "freedom",
-        "settings": {}
-      },
-      {
-        "tag": "block",
-        "protocol": "blackhole",
-        "settings": {}
-      }
-    ],
-    "routing": {
-      "domainStrategy": "AsIs",
-      "rules": []
-    }
-  },
-  {
-    "remarks": "🇨🇦 | 134.195.196.211:18000 238ms 48.8Mbps",
-    "log": {
-      "loglevel": "warning"
-    },
-    "dns": {
-      "servers": [
-        "1.1.1.1",
-        "8.8.8.8"
-      ]
-    },
-    "inbounds": [
-      {
-        "tag": "socks",
-        "listen": "127.0.0.1",
-        "port": 10808,
-        "protocol": "socks",
-        "settings": {
-          "auth": "noauth",
-          "udp": true
-        },
-        "sniffing": {
-          "enabled": true,
-          "destOverride": [
-            "http",
-            "tls"
-          ]
-        }
-      },
-      {
-        "tag": "http",
-        "listen": "127.0.0.1",
-        "port": 10809,
-        "protocol": "http",
-        "settings": {}
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "vmess",
-        "settings": {
-          "vnext": [
-            {
-              "address": "134.195.196.211",
-              "port": 18000,
-              "users": [
-                {
-                  "id": "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe",
-                  "alterId": 0,
-                  "security": "auto"
-                }
-              ]
-            }
-          ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "security": "none",
           "sockopt": {
             "dialerProxy": "entry"
           }
@@ -289,7 +195,7 @@
     }
   },
   {
-    "remarks": "🇺🇸 | 216.152.155.54:443 327ms 227.9Mbps",
+    "remarks": "🇺🇸 | 66.163.112.121:443 285ms n/a",
     "log": {
       "loglevel": "warning"
     },
@@ -331,7 +237,7 @@
         "settings": {
           "servers": [
             {
-              "address": "216.152.155.54",
+              "address": "66.163.112.121",
               "port": 443,
               "password": "0ab6c98dae3b48e8b9c4a776b6c9c19a"
             }
@@ -342,7 +248,99 @@
           "security": "tls",
           "tlsSettings": {
             "allowInsecure": false,
-            "serverName": "learn.nextjobopportunityandclaimyouridealrole.com"
+            "serverName": "www.unlockyourfuturefindyourperfectcareer.com"
+          },
+          "sockopt": {
+            "dialerProxy": "entry"
+          }
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "shadowsocks",
+        "settings": {
+          "servers": [
+            {
+              "address": "37.19.198.244",
+              "port": 443,
+              "method": "aes-128-gcm",
+              "password": "shadowsocks"
+            }
+          ]
+        },
+        "tag": "entry"
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {}
+      },
+      {
+        "tag": "block",
+        "protocol": "blackhole",
+        "settings": {}
+      }
+    ],
+    "routing": {
+      "domainStrategy": "AsIs",
+      "rules": []
+    }
+  },
+  {
+    "remarks": "🇺🇸 | 66.163.112.242:443 318ms n/a",
+    "log": {
+      "loglevel": "warning"
+    },
+    "dns": {
+      "servers": [
+        "1.1.1.1",
+        "8.8.8.8"
+      ]
+    },
+    "inbounds": [
+      {
+        "tag": "socks",
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true
+        },
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls"
+          ]
+        }
+      },
+      {
+        "tag": "http",
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {}
+      }
+    ],
+    "outbounds": [
+      {
+        "protocol": "trojan",
+        "settings": {
+          "servers": [
+            {
+              "address": "66.163.112.242",
+              "port": 443,
+              "password": "0ab6c98dae3b48e8b9c4a776b6c9c19a"
+            }
+          ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "tls",
+          "tlsSettings": {
+            "allowInsecure": false,
+            "serverName": "resources.unlockyourfuturefindyourperfectcareer.com"
           },
           "sockopt": {
             "dialerProxy": "entry"
@@ -390,7 +388,7 @@
     }
   },
   {
-    "remarks": "🇺🇸 | 216.152.155.59:443 353ms 26.2Mbps",
+    "remarks": "🇺🇸 | 66.163.112.147:443 334ms n/a",
     "log": {
       "loglevel": "warning"
     },
@@ -432,7 +430,7 @@
         "settings": {
           "servers": [
             {
-              "address": "216.152.155.59",
+              "address": "66.163.112.147",
               "port": 443,
               "password": "0ab6c98dae3b48e8b9c4a776b6c9c19a"
             }
@@ -443,7 +441,8 @@
           "security": "tls",
           "tlsSettings": {
             "allowInsecure": false,
-            "serverName": "api.nextjobopportunityandclaimyouridealrole.com"
+            "serverName": "courses.unlockyourfuturefindyourperfectcareer.com",
+            "fingerprint": "chrome"
           },
           "sockopt": {
             "dialerProxy": "entry"
@@ -462,7 +461,7 @@
                 {
                   "id": "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe",
                   "alterId": 0,
-                  "security": "aes-128-gcm"
+                  "security": "auto"
                 }
               ]
             }
@@ -491,7 +490,7 @@
     }
   },
   {
-    "remarks": "🇺🇸 | 216.152.155.176:443 757ms 108.6Mbps",
+    "remarks": "🇺🇸 | 66.163.112.13:443 769ms n/a",
     "log": {
       "loglevel": "warning"
     },
@@ -533,7 +532,7 @@
         "settings": {
           "servers": [
             {
-              "address": "216.152.155.176",
+              "address": "66.163.112.13",
               "port": 443,
               "password": "0ab6c98dae3b48e8b9c4a776b6c9c19a"
             }
@@ -544,7 +543,7 @@
           "security": "tls",
           "tlsSettings": {
             "allowInsecure": false,
-            "serverName": "blog.nextjobopportunityandclaimyouridealrole.com"
+            "serverName": "blog.unlockyourfuturefindyourperfectcareer.com"
           },
           "sockopt": {
             "dialerProxy": "entry"
