@@ -1,6 +1,6 @@
 [
   {
-    "remarks": "🇺🇸 | 37.19.198.243:443 141ms 77.9Mbps",
+    "remarks": "🇦🇺 | 84.17.41.2:18000 203ms 141.1Mbps",
     "log": {
       "loglevel": "warning"
     },
@@ -38,36 +38,17 @@
     ],
     "outbounds": [
       {
-        "protocol": "shadowsocks",
-        "settings": {
-          "servers": [
-            {
-              "address": "37.19.198.243",
-              "port": 443,
-              "method": "aes-128-gcm",
-              "password": "shadowsocks"
-            }
-          ]
-        },
-        "tag": "proxy",
-        "streamSettings": {
-          "sockopt": {
-            "dialerProxy": "entry"
-          }
-        }
-      },
-      {
         "protocol": "vmess",
         "settings": {
           "vnext": [
             {
-              "address": "67.220.85.46",
+              "address": "84.17.41.2",
               "port": 18000,
               "users": [
                 {
                   "id": "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe",
                   "alterId": 0,
-                  "security": "aes-128-gcm"
+                  "security": "none"
                 }
               ]
             }
@@ -75,178 +56,12 @@
         },
         "streamSettings": {
           "network": "tcp",
-          "security": "none"
-        },
-        "tag": "entry"
-      },
-      {
-        "tag": "direct",
-        "protocol": "freedom",
-        "settings": {}
-      },
-      {
-        "tag": "block",
-        "protocol": "blackhole",
-        "settings": {}
-      }
-    ],
-    "routing": {
-      "domainStrategy": "AsIs",
-      "rules": []
-    }
-  },
-  {
-    "remarks": "🇺🇸 | 185.230.230.18:19999 174ms 3.3Mbps",
-    "log": {
-      "loglevel": "warning"
-    },
-    "dns": {
-      "servers": [
-        "1.1.1.1",
-        "8.8.8.8"
-      ]
-    },
-    "inbounds": [
-      {
-        "tag": "socks",
-        "listen": "127.0.0.1",
-        "port": 10808,
-        "protocol": "socks",
-        "settings": {
-          "auth": "noauth",
-          "udp": true
-        },
-        "sniffing": {
-          "enabled": true,
-          "destOverride": [
-            "http",
-            "tls"
-          ]
-        }
-      },
-      {
-        "tag": "http",
-        "listen": "127.0.0.1",
-        "port": 10809,
-        "protocol": "http",
-        "settings": {}
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "shadowsocks",
-        "settings": {
-          "servers": [
-            {
-              "address": "185.230.230.18",
-              "port": 19999,
-              "method": "aes-256-gcm",
-              "password": "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
-            }
-          ]
-        },
-        "tag": "proxy",
-        "streamSettings": {
+          "security": "none",
           "sockopt": {
             "dialerProxy": "entry"
           }
-        }
-      },
-      {
-        "protocol": "vmess",
-        "settings": {
-          "vnext": [
-            {
-              "address": "67.220.85.46",
-              "port": 18000,
-              "users": [
-                {
-                  "id": "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe",
-                  "alterId": 0,
-                  "security": "aes-128-gcm"
-                }
-              ]
-            }
-          ]
         },
-        "streamSettings": {
-          "network": "tcp",
-          "security": "none"
-        },
-        "tag": "entry"
-      },
-      {
-        "tag": "direct",
-        "protocol": "freedom",
-        "settings": {}
-      },
-      {
-        "tag": "block",
-        "protocol": "blackhole",
-        "settings": {}
-      }
-    ],
-    "routing": {
-      "domainStrategy": "AsIs",
-      "rules": []
-    }
-  },
-  {
-    "remarks": "🇺🇸 | 45.86.51.18:19999 179ms 154.7Mbps",
-    "log": {
-      "loglevel": "warning"
-    },
-    "dns": {
-      "servers": [
-        "1.1.1.1",
-        "8.8.8.8"
-      ]
-    },
-    "inbounds": [
-      {
-        "tag": "socks",
-        "listen": "127.0.0.1",
-        "port": 10808,
-        "protocol": "socks",
-        "settings": {
-          "auth": "noauth",
-          "udp": true
-        },
-        "sniffing": {
-          "enabled": true,
-          "destOverride": [
-            "http",
-            "tls"
-          ]
-        }
-      },
-      {
-        "tag": "http",
-        "listen": "127.0.0.1",
-        "port": 10809,
-        "protocol": "http",
-        "settings": {}
-      }
-    ],
-    "outbounds": [
-      {
-        "protocol": "shadowsocks",
-        "settings": {
-          "servers": [
-            {
-              "address": "45.86.51.18",
-              "port": 19999,
-              "method": "aes-256-gcm",
-              "password": "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4="
-            }
-          ]
-        },
-        "tag": "proxy",
-        "streamSettings": {
-          "sockopt": {
-            "dialerProxy": "entry"
-          }
-        }
+        "tag": "proxy"
       },
       {
         "protocol": "shadowsocks",
@@ -279,7 +94,7 @@
     }
   },
   {
-    "remarks": "🇺🇸 | 37.19.198.160:443 595ms n/a",
+    "remarks": "🇦🇺 | 84.17.41.2:18000 218ms 122.6Mbps",
     "log": {
       "loglevel": "warning"
     },
@@ -317,35 +132,51 @@
     ],
     "outbounds": [
       {
-        "protocol": "shadowsocks",
+        "protocol": "vmess",
         "settings": {
-          "servers": [
+          "vnext": [
             {
-              "address": "37.19.198.160",
-              "port": 443,
-              "method": "aes-128-gcm",
-              "password": "shadowsocks"
+              "address": "84.17.41.2",
+              "port": 18000,
+              "users": [
+                {
+                  "id": "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe",
+                  "alterId": 0,
+                  "security": "auto"
+                }
+              ]
             }
           ]
         },
-        "tag": "proxy",
         "streamSettings": {
+          "network": "tcp",
+          "security": "none",
           "sockopt": {
             "dialerProxy": "entry"
           }
-        }
+        },
+        "tag": "proxy"
       },
       {
-        "protocol": "shadowsocks",
+        "protocol": "vmess",
         "settings": {
-          "servers": [
+          "vnext": [
             {
-              "address": "82.38.31.186",
-              "port": 8080,
-              "method": "chacha20-ietf-poly1305",
-              "password": "k1dBOmOB4oqi7Ump37a1bQ"
+              "address": "67.220.85.46",
+              "port": 18000,
+              "users": [
+                {
+                  "id": "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe",
+                  "alterId": 0,
+                  "security": "aes-128-gcm"
+                }
+              ]
             }
           ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "none"
         },
         "tag": "entry"
       },
@@ -366,7 +197,7 @@
     }
   },
   {
-    "remarks": "🇺🇸 | 185.95.231.156:443 3004ms n/a",
+    "remarks": "🇺🇸 | 15.204.97.209:23576 885ms 89.3Mbps",
     "log": {
       "loglevel": "warning"
     },
@@ -408,11 +239,11 @@
         "settings": {
           "vnext": [
             {
-              "address": "185.95.231.156",
-              "port": 443,
+              "address": "15.204.97.209",
+              "port": 23576,
               "users": [
                 {
-                  "id": "1f8cf47a-b66a-4916-979f-26edfcf44eea",
+                  "id": "48ff2b70-e180-582f-8866-d9a2edeed5f5",
                   "encryption": "none",
                   "flow": "xtls-rprx-vision"
                 }
@@ -424,10 +255,10 @@
           "network": "tcp",
           "security": "reality",
           "realitySettings": {
-            "serverName": "www.apple.com",
+            "serverName": "fuck.rkn",
             "fingerprint": "chrome",
-            "publicKey": "8eXftARun6KH38UZhuqIfPR1VF2DLS9RMBZEnF5k6To",
-            "shortId": "a3a578ab",
+            "publicKey": "1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s",
+            "shortId": "01",
             "spiderX": ""
           },
           "sockopt": {
@@ -437,23 +268,16 @@
         "tag": "proxy"
       },
       {
-        "protocol": "trojan",
+        "protocol": "shadowsocks",
         "settings": {
           "servers": [
             {
-              "address": "170.101.101.112",
-              "port": 443,
-              "password": "0ab6c98dae3b48e8b9c4a776b6c9c19a"
+              "address": "82.38.31.186",
+              "port": 8080,
+              "method": "chacha20-ietf-poly1305",
+              "password": "k1dBOmOB4oqi7Ump37a1bQ"
             }
           ]
-        },
-        "streamSettings": {
-          "network": "tcp",
-          "security": "tls",
-          "tlsSettings": {
-            "allowInsecure": false,
-            "serverName": "resources.explorecreativejobsandenhanceyourcareerportfolio.com"
-          }
         },
         "tag": "entry"
       },
